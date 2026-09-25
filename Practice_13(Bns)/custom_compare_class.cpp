@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class Student{
+    public:
+        string name;
+        int roll;
+        int marks;
+        Student(string name, int roll, int marks){
+            this->name = name;
+            this->roll = roll;
+            this->marks = marks;
+        }
+};
+
+class cmp{ //priority queue te bool function hoy na, class diye korte hoy
+    public:
+        bool operator()(Student l, Student r){
+            // return l.marks < r.marks; 
+            if(l.marks > r.marks) //ascending order (priority queue te ulto condition dite hoy)
+                return true;
+            else if(l.marks < r.marks)
+                return false;
+            else
+                return l.roll > r.roll;
+        }
+};
+
+int main(){
+    priority_queue<Student, vector<Student>, cmp> pq; //priority queue te data type na diye  class name dite hoy
+    int n;
+    cin >> n;
+    for(int i = 0; i < n; i++){
+        string name;
+        int roll, marks;
+        cin >> name >> roll >> marks;
+        Student obj(name, roll, marks);
+        pq.push(obj);
+    }
+    while(!pq.empty()){
+        cout << pq.top().name << " " << pq.top().roll << " " << pq.top().marks << endl;
+        pq.pop();
+    }
+}
