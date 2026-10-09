@@ -1,1 +1,4 @@
-Rahim 10 01292323
+2 3 3 3 7 8 9 9 
+Minimum element: 2
+Maximum element: 9
+Maximum element position: 6
