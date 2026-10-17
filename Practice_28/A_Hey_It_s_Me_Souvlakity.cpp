@@ -18,9 +18,9 @@ int main(){
         else{
             int first = s.find('1');
             int last = s.rfind('1');
-            cout << last - first - 1 << endl;
+            cout << last - first << endl;
         }
     }
-    
+
     return 0;
 }
