@@ -2,6 +2,7 @@
 using namespace std;
 
 int main(){
+    
     long long n, k;
     cin >> n >> k;
     vector<long long> divisors;
@@ -18,6 +19,7 @@ int main(){
         cout << -1 << '\n';
     else
         cout << divisors[k-1] << '\n';
-        
+
     return 0;
 }
+
